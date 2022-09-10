@@ -16,12 +16,22 @@ func main() {
 
 	var numStudentsPerGroup int = promptStudentsPerGroup()
 
-	// Temporary. Prints out shuffled student names
-	for i, name := range shuffleNames {
-		fmt.Println(i, "--", name)
+	// Initial values of incrementers
+	groupCounter := 1
+	x := 1
+
+	// Group creation
+	for g := 0; g < len(shuffleNames)/numStudentsPerGroup; g++ {
+		println("Group", groupCounter)
+		// We need to figure out how to initialize the x 
+		// in this next for loop to start at the latest element
+		// after it goes through the next for loop. 
+		for x <= (numStudentsPerGroup) {
+			fmt.Println(shuffleNames[x-1])
+			x++
+		}
+		groupCounter++
 	}
-	// Temporary. Prints out number of desired groups
-	println(numStudentsPerGroup)
 }
 
 func promptStudentsPerGroup() int {
