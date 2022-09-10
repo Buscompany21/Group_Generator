@@ -24,8 +24,8 @@ func main() {
 	for g := 0; g < len(shuffleNames)/numStudentsPerGroup; g++ {
 		println("Group", groupCounter)
 		// We need to figure out how to initialize the x 
-		// in this next for loop to start at the latest element
-		// after it goes through the next for loop. 
+		// in this for loop to start at the latest element
+		// after it goes through this loop. 
 		for x <= (numStudentsPerGroup) {
 			fmt.Println(shuffleNames[x-1])
 			x++
