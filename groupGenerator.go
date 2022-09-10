@@ -14,24 +14,24 @@ func main() {
 
 	var shuffleNames []string = shuffleNames(studNames)
 
-	var numGroups int = promptForGroups()
+	var numStudentsPerGroup int = promptStudentsPerGroup()
 
 	// Temporary. Prints out shuffled student names
 	for i, name := range shuffleNames {
 		fmt.Println(i, "--", name)
 	}
 	// Temporary. Prints out number of desired groups
-	println(numGroups)
+	println(numStudentsPerGroup)
 }
 
-func promptForGroups() int {
-	fmt.Println("How many groups do you want generated?")
+func promptStudentsPerGroup() int {
+	fmt.Println("How many individuals do you want in each group?")
 
-	var groupInput int
+	var numStudentsInput int
 
-	fmt.Scanln(&groupInput)
+	fmt.Scanln(&numStudentsInput)
 
-	return groupInput
+	return numStudentsInput
 }
 
 func readFile() []string {
