@@ -16,19 +16,28 @@ func main() {
 
 	var numStudentsPerGroup int = promptStudentsPerGroup()
 
+	var remainderOfStudents int = len(shuffleNames) % numStudentsPerGroup
+
 	// Initial values of incrementers
 	groupCounter := 1
 	x := 1
+	//to be able to tell where we are in the groups
+	i := 1
 
 	// Group creation
 	for g := 0; g < len(shuffleNames)/numStudentsPerGroup; g++ {
 		println("Group", groupCounter)
-		// We need to figure out how to initialize the x 
-		// in this for loop to start at the latest element
-		// after it goes through this loop. 
+
+		if groupCounter <= remainderOfStudents {
+			x = 0
+		} else {
+			x = 1
+		}
+
 		for x <= (numStudentsPerGroup) {
-			fmt.Println(shuffleNames[x-1])
+			fmt.Println(shuffleNames[i-1])
 			x++
+			i++
 		}
 		groupCounter++
 	}
